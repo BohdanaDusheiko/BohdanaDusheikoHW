@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "d38ed57f-56c4-4c76-aa65-fd94ad4bffc0",
+		"name": "Bohdana Dusheiko. Task 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40983448"
+	},
+	"item": [
+		{
+			"name": "Create user with all valid information",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\":\"Michelle\",\r\n\"age\": \"48\",\r\n\"gender\":\"female\",\r\n\"city\": \"London\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{Usersedit}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Create user with no city",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\":\"Laylee\",\r\n\"age\": \"23\",\r\n\"gender\":\"female\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Get user with valid id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Usersedit}}?id={{Michaelid}}",
+					"host": [
+						"{{Usersedit}}"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{Michaelid}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user with valid name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id=133d5ba2-e108-44c7-89c2-75f10f7dd1d8",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "133d5ba2-e108-44c7-89c2-75f10f7dd1d8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit user with all valid information",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": 23,\r\n    \"city\": \"Warsaw\",\r\n    \"gender\": \"female\",\r\n    \"name\": \"Laylee\",\r\n    \"id\": {{Layleeid}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Edit non exsicting user",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": 23,\r\n    \"city\": \"York\",\r\n    \"gender\": \"male\",\r\n    \"name\": \"Kreihe\",\r\n    \"id\": \"76727590979\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user with valid id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id={{Layleeid}}",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{Layleeid}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user with valid id 2.0",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Usersedit}}?id= {{Michelle id}}",
+					"host": [
+						"{{Usersedit}}"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": " {{Michelle id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "Usersedit",
+			"value": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+			"type": "default"
+		},
+		{
+			"key": "Layleeid",
+			"value": "\"5b0ad452-6f70-4e0b-b8ca-d0c15949bd99\"",
+			"type": "default"
+		},
+		{
+			"key": "Michaelid",
+			"value": "\"998256c8-9574-46ba-a2ff-5b3d76abe87f\"",
+			"type": "default"
+		},
+		{
+			"key": "Michelle id",
+			"value": "\"044b9713-2fc3-4664-acee-c6b466261b82\"",
+			"type": "default"
+		}
+	]
+}
