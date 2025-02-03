@@ -1,0 +1,285 @@
+{
+  "id": "cc8ce88f-118b-4084-9156-be5b0daa4bcf",
+  "version": "2.0",
+  "name": "Prom ua testing",
+  "url": "https://prom.ua",
+  "tests": [{
+    "id": "199bbcd5-5a7c-49fe-b3f1-3a950223177a",
+    "name": "Sign up with valid credetentials",
+    "commands": [{
+      "id": "23fe7f73-d048-4c09-ae77-18570279b5bf",
+      "comment": "Open main page",
+      "command": "open",
+      "target": "/ua",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4d1f10cd-953a-41ba-8a4e-383527d65c3e",
+      "comment": "Set window size",
+      "command": "setWindowSize",
+      "target": "1126x672",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c7270e55-1d77-4b56-9280-34738e9a2212",
+      "comment": "Click on account button",
+      "command": "click",
+      "target": "xpath=/html/body/div[1]/header/div/div/div[3]/div/div[1]/button",
+      "targets": [
+        ["css=.l-GwW:nth-child(1) > .VS-Ex .D8VyR", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "46904d70-23dd-40ef-9fdb-0a23bc83cbf3",
+      "comment": "Click on sign up or log in button",
+      "command": "click",
+      "target": "css=.VS-Ex:nth-child(2)",
+      "targets": [
+        ["css=.VS-Ex:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[20]", "xpath:attributes"],
+        ["xpath=//div[@id='react-portal']/div[2]/div/div/div[2]/div/div/ul/li/div/button", "xpath:idRelative"],
+        ["xpath=//li/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Увійти або зареєструватись')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8f0b0e0-5153-4be0-977f-e9ac6f5609f3",
+      "comment": "Sign up button appeared",
+      "command": "assertElementPresent",
+      "target": "css=._0cNvO.eBhBq",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "01332260-5c3c-41a4-995d-284e2517aafb",
+      "comment": "click on sign up button",
+      "command": "click",
+      "target": "css=.eBhBq",
+      "targets": [
+        ["css=.eBhBq", "css:finder"],
+        ["xpath=//div[@id='react-portal']/div[4]/div/div/div[2]/div/div/div/div[2]/div[2]/div[3]/div/span[2]", "xpath:idRelative"],
+        ["xpath=//span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Зареєструйтеся')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "79fd2489-e919-45ce-be44-ae9e18293782",
+      "comment": "Variable",
+      "command": "store",
+      "target": "Анжела",
+      "targets": [],
+      "value": "Анжела"
+    }, {
+      "id": "222ba569-8a5e-43b6-9545-5d5e8b1c1716",
+      "comment": "Enter valid name",
+      "command": "type",
+      "target": "id=firstName",
+      "targets": [],
+      "value": "${Анжела}"
+    }, {
+      "id": "9216b60b-ed31-4494-8240-25316917ee85",
+      "comment": "Enter valid LastName",
+      "command": "type",
+      "target": "id=lastName",
+      "targets": [
+        ["id=lastName", "id"],
+        ["css=#lastName", "css:finder"],
+        ["xpath=//input[@id='lastName']", "xpath:attributes"],
+        ["xpath=//div[@id='react-portal']/div[4]/div/div/div[2]/div/div/div/div[2]/div[2]/div/form/div[2]/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": "Крилова"
+    }, {
+      "id": "1f2c3278-683a-48bc-b161-eb368e836f4c",
+      "comment": "Enter valid phone number",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [],
+      "value": "636908475"
+    }, {
+      "id": "222277de-b181-4405-bef8-7bc3e7c1a9df",
+      "comment": "Sign up",
+      "command": "click",
+      "target": "id=registrationConfirmButton",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "8386d155-53d4-4dc3-b5c6-6a8c9bf2db94",
+    "name": "Checking search field accuracy",
+    "commands": [{
+      "id": "86493d09-e88a-4b1e-9c08-47262d411b55",
+      "comment": "Open main page",
+      "command": "open",
+      "target": "/ua",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "54bd62e4-4af7-4c04-8301-109a83c1d844",
+      "comment": "Set the size of the window",
+      "command": "setWindowSize",
+      "target": "1126x672",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34b2dc03-975a-42fb-9870-dae57c60afd9",
+      "comment": "Click on search field",
+      "command": "click",
+      "target": "name=search_term",
+      "targets": [
+        ["name=search_term", "name"],
+        ["css=.icvvW", "css:finder"],
+        ["xpath=//input[@name='search_term']", "xpath:attributes"],
+        ["xpath=//div[@id='spa-root']/header/div/div/div[2]/div/div/div/div/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "22c9e37a-6208-4918-97f1-b606e52a0d1a",
+      "comment": "Type the valid product name",
+      "command": "type",
+      "target": "name=search_term",
+      "targets": [
+        ["name=search_term", "name"],
+        ["css=.icvvW", "css:finder"],
+        ["xpath=//input[@name='search_term']", "xpath:attributes"],
+        ["xpath=//div[@id='spa-root']/header/div/div/div[2]/div/div/div/div/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "помада червона"
+    }, {
+      "id": "6ab25cd9-e3ca-4cb2-8cd4-fc1a029ce8e7",
+      "comment": "Click search",
+      "command": "click",
+      "target": "xpath=//button[@type='submit']",
+      "targets": [
+        ["css=.yNx5B", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='spa-root']/header/div/div/div[2]/div/div/div/div/div/form/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Знайти')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3d9ec3f-20f8-40af-bed6-8175657a5ca5",
+      "comment": "Move mouse to the first result",
+      "command": "mouseMoveAt",
+      "target": "xpath=/html/body/div[1]/div[2]/div[4]/div/div[2]/div[3]/div/div/div[1]/div[1]/div/div[1]/div/div/a",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d34c218c-cdcc-4e64-b3b4-53e16c235ad5",
+      "comment": "Click on the first lipstick",
+      "command": "click",
+      "target": "xpath=/html/body/div[1]/div[2]/div[4]/div/div[2]/div[3]/div/div/div[1]/div[1]/div/div[1]/div/div/a",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5a31eb7c-b4cf-46d5-9a9c-2da775e09755",
+      "comment": "Add lipstick to cart",
+      "command": "click",
+      "target": "css=.vtaL-.ySZw4",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "7a0117db-5884-45f7-8baa-cce39d74c973",
+    "name": "Cheking add to cart function",
+    "commands": [{
+      "id": "b80f9a63-b698-4741-9989-54c12c55b691",
+      "comment": "Open the main page",
+      "command": "open",
+      "target": "/ua",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d836a02f-defc-46af-9950-98724474602f",
+      "comment": "Set the window size",
+      "command": "setWindowSize",
+      "target": "1126x672",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "60efe9c8-303f-4c38-8841-bfde4dfe3a00",
+      "comment": "Click on search field",
+      "command": "click",
+      "target": "name=search_term",
+      "targets": [
+        ["name=search_term", "name"],
+        ["css=.icvvW", "css:finder"],
+        ["xpath=//input[@name='search_term']", "xpath:attributes"],
+        ["xpath=//div[@id='spa-root']/header/div/div/div[2]/div/div/div/div/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "28b5177a-a664-4be7-b303-a871712d6080",
+      "comment": "Type valid product name",
+      "command": "type",
+      "target": "name=search_term",
+      "targets": [],
+      "value": "Жіночі сумки"
+    }, {
+      "id": "bfa98d9e-695f-4595-a50e-9518a9cdbb44",
+      "comment": "Click Search",
+      "command": "click",
+      "target": "xpath=/html/body/div[1]/header/div/div/div[2]/div/div/div/div/div[1]/form/div/div[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "adff1f44-ace5-43a9-b698-4aff69480e5d",
+      "comment": "Move the mouse to the first bag",
+      "command": "mouseOver",
+      "target": "css=._0cNvO.jwtUM",
+      "targets": [
+        ["linkText=Спортивні сумки", "linkText"],
+        ["css=.bfetG:nth-child(7) > .M3v0L .\\_0cNvO", "css:finder"],
+        ["xpath=//a[contains(text(),'Спортивні сумки')]", "xpath:link"],
+        ["xpath=//div[@id='spa-root']/div[5]/div/div[2]/div/div/ul/li[7]/div/div/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/ua/Zhenskaya-sumka.html?category=380630')]", "xpath:href"],
+        ["xpath=//li[7]/div/div/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Спортивні сумки')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "741e04a7-07e8-48ad-8f99-9b0892206762",
+      "comment": "Click on the first bag",
+      "command": "click",
+      "target": "css=._0cNvO.jwtUM",
+      "targets": [
+        ["css=.l-GwW:nth-child(1) > .JicYY > .M3v0L > .\\_0cNvO", "css:finder"],
+        ["xpath=//div[@id='spa-root']/div[5]/div/div[2]/div[3]/div/div[2]/div/div/div/div/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/ua/p2310315547-sumka-zhenskaya-dizel.html')]", "xpath:href"],
+        ["xpath=//div/div/div/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d53341f0-2000-4d59-9dc9-a66822b660f5",
+      "comment": "Click add to cart",
+      "command": "click",
+      "target": " css=.uTnwV > .M3v0L:nth-child(2)",
+      "targets": [
+        ["css=.uTnwV > .M3v0L:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='spa-root']/div[2]/div/div[3]/div[2]/div/div/div[6]/div/div[2]/button/div[2]", "xpath:idRelative"],
+        ["xpath=//button/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "11aaf0d3-663c-4cf0-94e7-aa99ac62c179",
+      "comment": "Verify if the text is correct",
+      "command": "assertText",
+      "target": "xpath=//button/div[2]",
+      "targets": [],
+      "value": "До кошика"
+    }]
+  }],
+  "suites": [{
+    "id": "3374aa91-94e2-4d0f-97f0-0c714ac15c51",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["199bbcd5-5a7c-49fe-b3f1-3a950223177a"]
+  }],
+  "urls": ["https://prom.ua/", "https://prom./"],
+  "plugins": []
+}
